@@ -1,0 +1,28 @@
+{
+	"name": "jonathancastrodev/opengiscrmcodeigniter3",
+	"description": "OpenSource Gis CRM Software",
+	"homepage": "https://opengiscrm.com/",
+	"type": "project",	
+	"license": "MIT",
+	"authors": [
+        {
+            "name": "Jonathan Castro",
+            "email": "jonathancastro@opengiscrm.com"
+        }
+    ],
+	"support": {
+		"issues": "https://github.com/jonathancastrodev/opengiscrm-codeigniter3/issues",
+		"wiki": "https://opengiscrm.com/wiki",		
+		"source": "https://github.com/jonathancastrodev/opengiscrm-codeigniter3"
+	},
+	"require": {
+		"php": ">=5.3.7"
+	},
+	"suggest": {
+		"paragonie/random_compat": "Provides better randomness in PHP 5.x"
+	},
+	"require-dev": {
+		"mikey179/vfsStream": "1.1.*",
+		"phpunit/phpunit": "4.* || 5.*"
+	}
+}
