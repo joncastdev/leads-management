@@ -25,45 +25,45 @@
 //   labels: ['Series A', 'Series B']
 // });
 
-getChart();
+// getChart();
 
 
-function getChart()
-{
+// function getChart()
+// {
 
-    // window.location=BASE_URL + 'leads/deleteLead/' + params;
+//     // window.location=BASE_URL + 'leads/deleteLead/' + params;
 
-    // // cargo los countrys con ajax
-    $.ajax({
-      url: BASE_URL+'api/gettotalchart/',   
-      dataType: 'json'    
-    })
-    .done(function(result) {      
+//     // // cargo los countrys con ajax
+//     $.ajax({
+//       url: BASE_URL+'api/gettotalchart/',   
+//       dataType: 'json'    
+//     })
+//     .done(function(result) {      
 
-      // console.log(result);
+//       // console.log(result);
 
-      chartData(result);
+//       chartData(result);
 
-    });
+//     });
 
-  }
+//   }
 
-  function chartData(resp){
+//   function chartData(resp){
 
-    var data = resp;
-        // lead = teads;
+//     var data = resp;
+//         // lead = teads;
 
-        // console.log(user);
+//         // console.log(user);
 
-    Morris.Donut({
-      element: 'myfirstchart',
-      data: [    
-      {label: "Total Users", value: data[0].totalUsers},
-      {label: "Total Leads", value: data[1].totalLeads}
-      ]
-    });
+//     Morris.Donut({
+//       element: 'myfirstchart',
+//       data: [    
+//       {label: "Total Users", value: data[0].totalUsers},
+//       {label: "Total Leads", value: data[1].totalLeads}
+//       ]
+//     });
 
-  }
+//   }
 
 
 
