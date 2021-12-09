@@ -1,5 +1,5 @@
 # OpenGisCRM CodeIgniter 3 Version
-_Manage your clients and leads with an Open Source Gis CRM Software.
+Manage your clients and leads with an Open Source Gis CRM Software.
 
 ## Starting 🚀
 
