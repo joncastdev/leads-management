@@ -7,7 +7,9 @@ class Security extends OGC_Controller {
 
 	public function __construct()
 	{		
-		parent::__construct();			
+		parent::__construct();
+
+		 $this->load->model('Security_Model');			
 
 	}
 
@@ -50,10 +52,10 @@ class Security extends OGC_Controller {
 			$email = $_POST["email"];
 			$password = $_POST["password"];		
 
-			if ($this->Login_Model->checkUser($email, $password)) {
+			if ($this->Security_Model->checkUser($email, $password)) {
 
 
-				$userData = $this->Login_Model->userSession($email);					
+				$userData = $this->Security_Model->userSession($email);					
 
 
 
@@ -145,7 +147,7 @@ public function lastAccess($email)
 		'last_access' => date('H-i-s')			
 	);
 
-	$this->Login_Model->LastAccess($email,$params);
+	$this->Security_Model->LastAccess($email,$params);
 
 
 }
