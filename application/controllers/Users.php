@@ -4,8 +4,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Users extends OGC_Controller {
 
-	// public $algo;	
-
 
 	public function __construct()
 	{		

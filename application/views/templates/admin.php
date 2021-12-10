@@ -143,7 +143,8 @@
     <footer class="sticky-footer bg-white">
       <div class="container my-auto">
         <div class="copyright text-center my-auto">
-          <span>Copyright &copy; <a href="https://jonathancastrodev.com/" target="_blank">contacto@jonathancastrodev.com</a></span>
+          <span>Copyright &copy; <a href="https://opengiscrm.com/" target="_blank">jonathancastro@opengiscrm.com</a></span>
+        </div>
         </div>
       </div>
     </footer>

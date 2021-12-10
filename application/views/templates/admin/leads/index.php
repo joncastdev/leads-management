@@ -58,7 +58,9 @@
       </div> -->
       <br>
 
-      <div class="card-body">
+      <?php if($data): ?>
+
+        <div class="card-body">
         <!-- <div class="text-center">
         -->
         
@@ -100,7 +102,7 @@
 
                               <th>Img</th>
                               <th>Name</th>
-                             <!--  <th>Last Name</th> -->
+                              <!--  <th>Last Name</th> -->
                               <th>Company</th>                         
                               <th>Email</th>
                               <th>Country</th>
@@ -170,7 +172,9 @@
 
              </div>
 
-             <!--  end shadow -->
+           <?php endif; ?>
+
+           <!--  end shadow -->
     <!--  </div>  
     -->
 
@@ -344,7 +348,7 @@
   </div>
 
   <div class="col-sm-4" >
-   <input type="text" class="form-control form-control-user" name="id_twiiter" id="id_twiiter"  placeholder="Twiiter">
+   <input type="text" class="form-control form-control-user" name="id_twitter" id="id_twitter"  placeholder="Twitter">
  </div>
 
 

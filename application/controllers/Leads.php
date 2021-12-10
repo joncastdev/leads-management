@@ -11,7 +11,10 @@ class Leads extends OGC_Controller {
 	{		
 		parent::__construct();
 
-		$this->load->model('Leads_Model');	
+		$this->load->model('Leads_Model');
+
+		$this->load->library('fpdf');
+		$this->load->library('phpexcel');		
 
 		$this->auth();			
 
@@ -31,48 +34,22 @@ class Leads extends OGC_Controller {
 		$data['sidebar_admin'] = $this->load->view('templates/admin/inc/sidebar',$this->userInfo,TRUE);
 		$data['title'] = $this->title;
 
-		$data['data'] = $datas;
-
-		// $data['datass'] = $datass;
-
-
-		// if ($this->prue()) {
-		// 	# code...
-
-		// 	$data['datass'];
-
-		// }else{
-
-			// $data['datass'] = $this->prue();
-		// }
-
-		// print_r($_GET);
-
-
-		// if ($_GET === true) {
-		// 	# code...
-		// 	print_r($_GET);
-		// }
+		$data['data'] = $datas;		
 
 		$this->load_view_admin('templates/admin/leads/index',$data);
-
-
-		// echo json_encode($_POST["id"]);
-
-		 // echo json_encode($id);
 
 	}
 
 	public function leadsTable()
 	{
 
-		$data= $this->Leads_Model->getLeads();
+		$data= $this->Leads_Model->getLeads();		
 
-		// echo json_encode($data);
+		// $this->output
+		// ->set_content_type('application/json')
+		// ->set_output(json_encode($data));
 
-		$this->output
-		->set_content_type('application/json')
-		->set_output(json_encode($data));
+		echo json_encode($data);	
 	}
 
 
@@ -117,7 +94,7 @@ class Leads extends OGC_Controller {
 			$quantity_worker = $_POST["quantity_worker"];
 			$qualification = $_POST["qualification"];		
 			$id_skype = $_POST["id_skype"];
-			$id_twiiter = $_POST["id_twiiter"];
+			$id_twitter = $_POST["id_twitter"];
 			$description = $_POST["description"];
 
 			if ($company == null) {
@@ -210,9 +187,9 @@ class Leads extends OGC_Controller {
 				$id_skype = '---';
 			}
 
-			if ($id_twiiter == null) {
+			if ($id_twitter == null) {
 				# code...
-				$id_twiiter = '---';
+				$id_twitter = '---';
 			}
 
 			if ($description == null) {
@@ -244,7 +221,7 @@ class Leads extends OGC_Controller {
 				'quantity_worker' => $quantity_worker,
 				'id_qualification' => $qualification,
 				'id_skype' => $id_skype,
-				'id_twiiter' => $id_twiiter,			
+				'id_twitter' => $id_twitter,			
 				'description' => $description	  	
 				// 'created_at' => date('d-m-Y'),
 				// 'updated_at' => date('d-m-Y'),
@@ -304,9 +281,9 @@ class Leads extends OGC_Controller {
 		// ->set_output("Lead delete");
 
 		$data=array(		
-				'leadd' => "delete"
-				
-			);
+			'leadd' => "delete"
+
+		);
 
 		echo json_encode($data);
 
@@ -323,16 +300,16 @@ class Leads extends OGC_Controller {
 		$datas= $this->Leads_Model->getLeadsById($id);		
 
 
-		$this->title = 'View';
+		$this->title = 'Show';
 
 		$data = array();	
-		$data['navbar_admin'] = $this->load->view('admin/inc/navbar',$this->userInfo,TRUE);
-		$data['sidebar_admin'] = $this->load->view('admin/inc/sidebar',$this->userInfo,TRUE);
+		$data['navbar_admin'] = $this->load->view('templates/admin/inc/navbar',$this->userInfo,TRUE);
+		$data['sidebar_admin'] = $this->load->view('templates/admin/inc/sidebar',$this->userInfo,TRUE);
 		$data['title'] = $this->title;
 
-		$data['data'] = $datas;
-		
-		$this->load_layout_back('admin/leads/view',$data);
+		$data['data'] = $datas;		
+
+		$this->load_view_admin('templates/admin/leads/show',$data);
 		
 
 	}
@@ -344,17 +321,17 @@ class Leads extends OGC_Controller {
 
 		// echo $datas;
 
-		print_r($datas);
+		// print_r($datas);
 
 
 
 
 
-		$this->email->from('contacto@jonathancastrodev.com', 'Test app');
+		$this->email->from('contacto@opengiscrm.com', 'Test app');
 		$this->email->to($datas['email']);      
-		$this->email->subject('Dororo opening');
+		$this->email->subject('OpenGisCRM Tutorial And Courses');
 
-		$this->email->message('visit https://www.youtube.com/watch?v=9Q1rTavZBJo');
+		$this->email->message('visit https://opengiscrm.com/');
 
 		$this->email->send();
 
@@ -364,7 +341,7 @@ class Leads extends OGC_Controller {
 	}
 
 
-		public function leadsPdf()
+	public function leadsPdf()
 	{ 
 
 		$data = $this->Leads_Model->getLeads();
