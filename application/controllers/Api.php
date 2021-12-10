@@ -3,8 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Api extends OGC_Controller {
 
-	// private $userInfo;
-
 	public function __construct()
 	{		
 		parent::__construct();
@@ -21,13 +19,7 @@ class Api extends OGC_Controller {
 		echo "Api Rest";
 
 	}
-
-	// metodo para obtener y mantener la session abierta
-	// public function getSession()
-	// {
-	// 	return $this->session->userdata('user');
-
-	// }
+	
 
 	public function getCountrys()
 	{

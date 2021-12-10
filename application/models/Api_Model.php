@@ -5,7 +5,7 @@ class Api_Model extends CI_Model {
 	
 	public function getCountrys()
 	{
-		// una forma de usar distict
+		
 		$this->db->distinct();
 		$this->db->select("id_country,country");
 		$this->db->from("countrys");
@@ -42,7 +42,7 @@ class Api_Model extends CI_Model {
 		
 	}
 
-		public function getSectors()
+	public function getSectors()
 	{
 		
 		$this->db->distinct();
@@ -56,7 +56,7 @@ class Api_Model extends CI_Model {
 	}
 
 
-		public function getstateClients()
+	public function getstateClients()
 	{
 		
 		$this->db->distinct();
@@ -70,7 +70,7 @@ class Api_Model extends CI_Model {
 	}
 
 
-		public function getQualifications()
+	public function getQualifications()
 	{
 		
 		$this->db->distinct();
@@ -90,10 +90,7 @@ class Api_Model extends CI_Model {
 	
 
 	public function countCharts()
-	{
-		// 1 es users
-		// 2 es leads
-		// 3 es student
+	{		
 
 		$this->db->select("COUNT(id_user) AS totalUsers");
 		$this->db->from("users");
@@ -103,26 +100,11 @@ class Api_Model extends CI_Model {
 		$this->db->select("COUNT(id_lead) AS totalLeads");
 		$this->db->from("leads");		
 		$leads = $this->db->get()->row();
-
-		// $this->db->select("COUNT(id_role) AS totalTeachers");
-		// $this->db->from("users");
-		// $this->db->where("id_role", 2);		
-		// $teachers = $this->db->get()->row();
-
-		// $this->db->select("COUNT(id_role) AS totalStudents");
-		// $this->db->from("users");
-		// $this->db->where("id_role", 3);		
-		// $students = $this->db->get()->row();
-
-		// paso de una vez las 3 consultas en un array clave,valor
-		// $query = array(
-		// 	'totalUsers' => $users,
-		// 	'totalLeads' => $leads		
-		// );
+		
 
 		$query = array(
-			 $users,
-			 $leads		
+			$users,
+			$leads		
 		);
 
 
@@ -146,12 +128,9 @@ class Api_Model extends CI_Model {
 		$this->db->select( 'B.id_state,B.state' );
 		$this->db->from( 'countrys AS A' );
 		$this->db->join( 'states AS B', 'A.id_country = B.id_country', 'inner' );
-		$this->db->where( 'A.id_country', $param );
-		// $this->db->where( 'A.id_country = 1' );
+		$this->db->where( 'A.id_country', $param );		
 
-		$query = $this->db->get()->result();
-		
-		// return  json_encode($query);
+		$query = $this->db->get()->result();	
 
 		return $query;		
 	}

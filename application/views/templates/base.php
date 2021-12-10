@@ -11,11 +11,8 @@
   <meta name="copyright" content="Jonathan Castro" />
   
 
-  <title><?php echo $title;?></title>  
-
-
-  <!-- <link href="<?php //echo base_url();?>assets/css/jquery-ui.css" rel="stylesheet" type="text/css"> -->
-
+  <title><?php echo $title;?></title> 
+  
 
   <script src="<?php echo base_url();?>assets/theme/vendor/jquery/jquery.min.js"></script>
   
@@ -67,8 +64,7 @@
 
      <!-- Main Content -->
      <div id="content">
-
-       <!--  <button type="" class="btn-danger btn-lg">botton</button> -->
+       
 
        <?php echo $content;?>
 
@@ -148,9 +144,6 @@
 
 <!-- Custom scripts for all pages-->
 <script src="<?php echo base_url();?>assets/theme/js/sb-admin-2.min.js"></script>
-
-<!-- tags -->
-<!-- <script src="<?php //echo base_url();?>assets/js/jquery-ui.min.js"></script> -->
 
 
 <script src="<?php echo base_url();?>assets/js/table.js"></script>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 <head>
 
   <meta charset="utf-8">
@@ -11,20 +11,10 @@
   <meta name="copyright" content="Jonathan Castro" />
   
 
-  <title><?php echo $title;?></title>  
-
-
-  <!--  <link href="<?php //echo base_url();?>assets/css/jquery-ui.css" rel="stylesheet" type="text/css"> -->
-
+  <title><?php echo $title;?></title> 
 
 
   <link href="<?php echo base_url();?>assets/css/modified.css" rel="stylesheet" type="text/css">
-
-
-  <!--  <link href="<?php //echo base_url();?>assets/css/jquery-te-1.4.0.css" rel="stylesheet" type="text/css"> -->
-
-  
-
 
 
   <script src="<?php echo base_url();?>assets/theme/vendor/jquery/jquery.min.js"></script>
@@ -34,16 +24,10 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
   
-  <!-- <script src="<?php //echo base_url();?>assets/js/jquery-te-1.4.0.min.js"></script> -->
 
-
-  <!-- me funciono con estas cdn el sweet alert -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.0/sweetalert2.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.0/sweetalert2.css"/>
-  
 
-  <!-- Custom fonts for this template-->
-  <!--  <link href="<?php //echo base_url();?>assets/theme/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
 
   <link href="<?php echo base_url();?>assets/theme/vendor/fontawesome-free/css/all.css" rel="stylesheet" type="text/css">
 
@@ -90,8 +74,7 @@
 
      <!-- Main Content -->
      <div id="content">
-
-       <!--  <button type="" class="btn-danger btn-lg">botton</button> -->
+      
 
        <?php echo $content;?>
 
@@ -145,17 +128,17 @@
         <div class="copyright text-center my-auto">
           <span>Copyright &copy; <a href="https://opengiscrm.com/" target="_blank">jonathancastro@opengiscrm.com</a></span>
         </div>
-        </div>
       </div>
-    </footer>
-    <!-- End of Footer -->
+    </div>
+  </footer>
+  <!-- End of Footer -->
 
 
 
-    <!-- End of Content Wrapper -->
-  </div>
+  <!-- End of Content Wrapper -->
+</div>
 
-  <!-- End of Page Wrapper -->
+<!-- End of Page Wrapper -->
 </div>
 
 
@@ -173,22 +156,10 @@
 <!-- Custom scripts for all pages-->
 <script src="<?php echo base_url();?>assets/theme/js/sb-admin-2.min.js"></script>
 
-<!-- tags -->
-<!-- <script src="<?php //echo base_url();?>assets/js/jquery-ui.min.js"></script> -->
-
-
-<!-- <script src="<?php //echo base_url();?>assets/js/jquery-te-1.4.0.min.js"></script> -->
-
-
-
-<!-- <script src="<?php //echo base_url();?>assets/js/editor.js"></script> -->
 
 <script src="<?php echo base_url();?>assets/js/table.js"></script>
 
 
-
-<!-- Page level plugins -->
-<!-- <script src="<?php //echo base_url();?>assets/theme/vendor/datatables/jquery.dataTables.min.js"></script> -->
 <script src="<?php echo base_url();?>assets/theme/vendor/datatables/jquery.dataTables.js"></script>
 <script src="<?php echo base_url();?>assets/theme/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 

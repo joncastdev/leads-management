@@ -11,22 +11,18 @@
   <ul class="navbar-nav ml-auto">
 
     <li class="nav-item">
-      <a class="nav-link" href="<?php echo base_url();?>dashboard">       
+      <a class="nav-link" href="<?php echo base_url();?>dashboard">
+       <!--  <i class="fas fa-fw fa-user"></i> -->
+       <!-- Counter - Messages -->
        <span class="text-dark">Dashboard</span>
      </a>
-   </li>
+   </li>  
 
-   <li class="nav-item">
-    <a class="nav-link" href="<?php echo base_url();?>leads">     
-      <span class="text-dark">Leads</span>
-    </a>
-  </li>  
+   <!--    divider -->
+   <div class="topbar-divider d-none d-sm-block"></div>
 
-  <!--    divider -->
-  <div class="topbar-divider d-none d-sm-block"></div>
-
-  <!-- Nav Item - Alerts -->
-  <li class="nav-item dropdown no-arrow mx-1">
+   <!-- Nav Item - Alerts -->
+   <li class="nav-item dropdown no-arrow mx-1">
     <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <i class="fas fa-bell fa-fw"></i>
       <!-- Counter - Alerts -->
