@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
-  <meta name="description" content="jonathancastrodev crm tu crm personalizado ">
-  <meta name="keywords" content="crm,clientes,reportes"/>
+  <meta name="description" content="Open Source Gis CRM Software - CodeIgniter 3">
+  <meta name="keywords" content="crm,clients,leads,reports"/>
   <meta name="author" content="Jonathan Castro">
   <meta name="copyright" content="Jonathan Castro" />
   

@@ -107,8 +107,8 @@ class Users extends OGC_Controller {
 		$this->title = 'Users';
 
 		$data = array();	
-		$data['navbar_admin'] = $this->load->view('admin/inc/navbar',$this->userInfo,TRUE);
-		$data['sidebar_admin'] = $this->load->view('admin/inc/sidebar',$this->userInfo,TRUE);
+		$data['navbar_admin'] = $this->load->view('templates/admin/inc/navbar',$this->userInfo,TRUE);
+		$data['sidebar_admin'] = $this->load->view('templates/admin/inc/sidebar',$this->userInfo,TRUE);
 		$data['title'] = $this->title;
 
 		$data['data'] = $datas;
@@ -134,7 +134,7 @@ class Users extends OGC_Controller {
 		// 	print_r($_GET);
 		// }
 
-		$this->load_layout_back('admin/users',$data);
+		$this->load_view_admin('templates/admin/users/index',$data);
 
 
 		// echo json_encode($_POST["id"]);
