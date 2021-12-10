@@ -192,6 +192,10 @@ class Migration_create_data extends CI_Migration {
                 'type' => 'INT',
                 'constraint' => '11',
             ),
+            'id_project' => array(
+                'type' => 'INT',
+                'constraint' => '11',
+            ),
             'income' => array(
                 'type' => 'VARCHAR',
                 'constraint' => '50',
@@ -233,11 +237,11 @@ class Migration_create_data extends CI_Migration {
 
         // $this->dbforge->drop_table('states');
 
-        $this->dbforge->add_key('id_leads', TRUE);
+        $this->dbforge->add_key('id_lead', TRUE);
         $this->dbforge->create_table('leads');
 
         $this->db->insert('leads', [
-            'id_customer' => 1,           
+            'id_lead' => 1,           
             'first_name' => 'jonathan',
             'last_name' => 'castro',
             'company' => 'OoenGisCRM',
@@ -262,12 +266,173 @@ class Migration_create_data extends CI_Migration {
             'id_skype' => '@opengiscrm',
             'id_twitter' => '@opengiscrm',
             'description' => 'test test test test'
-         ]);
-
-
+        ]);
 
 
         $this->dbforge->add_field(array(
+            'id_project' => array(
+                'type' => 'INT',
+                'constraint' => 5,
+                'unsigned' => TRUE,
+                'auto_increment' => TRUE
+            ),
+            'name' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '50',
+            ),
+            'description' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '150',
+            ),
+            'id_status' => array(
+                'type' => 'INT',
+                'constraint' => '11',
+            ),                                             
+        ));
+
+        // $this->dbforge->drop_table('states');
+
+        $this->dbforge->add_key('id_project', TRUE);
+        $this->dbforge->create_table('projects');
+
+        $this->db->insert('projects', [
+            'id_project' => 1,
+            'name' => 'test',
+            'description' => 'test project',
+            'id_status' => 1
+        ]);
+
+
+        $this->dbforge->add_field(array(
+            'id_qualification' => array(
+                'type' => 'INT',
+                'constraint' => 5,
+                'unsigned' => TRUE,
+                'auto_increment' => TRUE
+            ),
+            'qualification' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '50',
+            ),                                                       
+        ));
+
+        // $this->dbforge->drop_table('states');
+
+        $this->dbforge->add_key('id_qualification', TRUE);
+        $this->dbforge->create_table('qualifications');
+
+        $this->db->insert('qualifications', [
+            'id_qualification' => 1,
+            'qualification' => '-None-'            
+        ]);
+
+        $this->db->insert('qualifications', [
+            'id_qualification' => 2,
+            'qualification' => 'Acquired'            
+        ]);
+
+        $this->db->insert('qualifications', [
+            'id_qualification' => 3,
+            'qualification' => 'Active'            
+        ]);
+
+
+
+
+     
+
+
+        $this->dbforge->add_field(array(
+            'id_role' => array(
+                'type' => 'INT',
+                'constraint' => 5,
+                'unsigned' => TRUE,
+                'auto_increment' => TRUE
+            ),
+            'role' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '50',
+            ),                                              
+        ));
+
+
+        // $this->dbforge->drop_table('roles');
+
+        $this->dbforge->add_key('id_role', TRUE);
+        $this->dbforge->create_table('roles');
+
+        $this->db->insert('roles', [
+            'id_role' => 1,
+            'role' => 'admin'            
+        ]);
+
+        $this->db->insert('roles', [
+            'id_role' => 2,
+            'role' => 'user'            
+        ]);
+
+
+        $this->dbforge->add_field(array(
+            'id_sector' => array(
+                'type' => 'INT',
+                'constraint' => 5,
+                'unsigned' => TRUE,
+                'auto_increment' => TRUE
+            ),
+            'sectors' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '50',
+            ),                                                       
+        ));
+
+        // $this->dbforge->drop_table('states');
+
+        $this->dbforge->add_key('id_sector', TRUE);
+        $this->dbforge->create_table('sectors');
+
+        $this->db->insert('sectors', [
+            'id_sector' => 1,
+            'sectors' => '-None-'            
+        ]);
+
+         $this->db->insert('sectors', [
+            'id_sector' => 2,
+            'sectors' => 'ASP (Application Service Provider)'            
+        ]);
+
+
+
+         $this->dbforge->add_field(array(
+            'id_source' => array(
+                'type' => 'INT',
+                'constraint' => 5,
+                'unsigned' => TRUE,
+                'auto_increment' => TRUE
+            ),
+            'source' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '50',
+            ),                                                       
+        ));
+
+        // $this->dbforge->drop_table('states');
+
+        $this->dbforge->add_key('id_source', TRUE);
+        $this->dbforge->create_table('sources');
+
+        $this->db->insert('sources', [
+            'id_source' => 1,
+            'source' => '-None-'            
+        ]);
+
+         $this->db->insert('sources', [
+            'id_source' => 2,
+            'source' => 'Warning'            
+        ]);
+
+
+
+            $this->dbforge->add_field(array(
             'id_state' => array(
                 'type' => 'INT',
                 'constraint' => 5,
@@ -309,34 +474,72 @@ class Migration_create_data extends CI_Migration {
         ]);
 
 
-        $this->dbforge->add_field(array(
-            'id_role' => array(
+
+           $this->dbforge->add_field(array(
+            'id_state_client' => array(
                 'type' => 'INT',
                 'constraint' => 5,
                 'unsigned' => TRUE,
                 'auto_increment' => TRUE
             ),
-            'role' => array(
+            'state_client' => array(
                 'type' => 'VARCHAR',
                 'constraint' => '50',
-            ),                                              
+            ),                                                       
         ));
 
+        // $this->dbforge->drop_table('states');
 
-        // $this->dbforge->drop_table('roles');
+        $this->dbforge->add_key('id_state_client', TRUE);
+        $this->dbforge->create_table('state_clients');
 
-        $this->dbforge->add_key('id_role', TRUE);
-        $this->dbforge->create_table('roles');
-
-        $this->db->insert('roles', [
-            'id_role' => 1,
-            'role' => 'admin'            
+        $this->db->insert('state_clients', [
+            'id_state_client' => 1,
+            'state_client' => '-None-'           
         ]);
 
-        $this->db->insert('roles', [
-            'id_role' => 2,
-            'role' => 'user'            
+
+        $this->db->insert('state_clients', [
+            'id_state_client' => 2,
+            'state_client' => 'Contact attempt'            
         ]);
+
+
+             $this->dbforge->add_field(array(
+            'id_status' => array(
+                'type' => 'INT',
+                'constraint' => 5,
+                'unsigned' => TRUE,
+                'auto_increment' => TRUE
+            ),
+            'status' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '50',
+            ),                                                        
+        ));
+
+        // $this->dbforge->drop_table('states');
+
+        $this->dbforge->add_key('id_status', TRUE);
+        $this->dbforge->create_table('status');
+
+        $this->db->insert('status', [
+            'id_status' => 1,
+            'status' => 'Review'           
+        ]);
+
+
+        $this->db->insert('status', [
+            'id_status' => 2,
+            'status' => 'Approved'           
+        ]);
+
+        $this->db->insert('status', [
+            'id_status' => 3,
+            'status' => 'Rejected'            
+        ]);
+
+        
 
 
         $this->dbforge->add_field(array(
@@ -419,17 +622,33 @@ class Migration_create_data extends CI_Migration {
 
         ]);
 
+        $this->db->insert('users', [
+            'id_user' => 2,
+            'img' => 'user.png',
+            'first_name' => 'jonathan2',
+            'last_name' => 'castro2',
+            'email' => 'contacto@opengiscrm.com',
+            'password' => $password,
+            'id_country' => 1,
+            'id_state' => 1,
+            'id_role' => 2,
+            'created_at' =>  $created_at,
+            'updated_at' => $updated_at,
+            'last_access' => $last_access,
+
+        ]);
+
 
 
     }
 
     public function down()
     {
-       $this->dbforge->drop_table('countrys');
-       $this->dbforge->drop_table('states');
-       $this->dbforge->drop_table('roles');
-       $this->dbforge->drop_table('users');        
+     $this->dbforge->drop_table('countrys');
+     $this->dbforge->drop_table('states');
+     $this->dbforge->drop_table('roles');
+     $this->dbforge->drop_table('users');        
 
 
-   }
+ }
 }
