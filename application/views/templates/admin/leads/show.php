@@ -10,7 +10,9 @@
       </div> -->
       <br>
 
-      <div class="card-body">
+      <?php if($data): ?>
+
+        <div class="card-body">
         <!-- <div class="text-center">
         -->
 
@@ -30,16 +32,16 @@
                     <!-- clase que centra -->
                     <!-- <div class="p-5"> -->
 
-                   
+
 
 
 
                       <div class="card content">
 
                         <div class="row">              
-                        <div class="col col-md-6">
+                          <div class="col col-md-6">
 
-                          <!-- float-left -->
+                            <!-- float-left -->
 
                         <!-- <div class="pull-left card-danger">
 
@@ -48,28 +50,28 @@
                         </div> -->
 
                        <!--  <div class="card bg-danger text-white ">
-                          <div class="card-body"> -->
-                            <a class="offert" href="<?php echo base_url('leads/promo/'.''.$data['id_lead']); ?>"  ><span class="btn-success btn-lg fas  fa-envelope" data-toggle="offert" title="Offert" >Offert</span></a>
+                        <div class="card-body"> -->
+                          <a class="offert" href="<?php echo base_url('leads/promo/'.''.$data['id_lead']); ?>"  ><span class="btn-success btn-lg fas  fa-envelope" data-toggle="offert" title="Offert" >Offert</span></a>
 
-                            <a class="delete" onclick="deleteLead(<?php echo $data['id_lead'];?>)" ><span class="btn-danger btn-lg fas  fa-trash-alt" data-toggle="delete" title="Delete" >Delete</span></a>
+                          <a class="delete" onclick="deleteLead(<?php echo $data['id_lead'];?>)" ><span class="btn-danger btn-lg fas  fa-trash-alt" data-toggle="delete" title="Delete" >Delete</span></a>
 
-                            <br>
-                            <br>
+                          <br>
+                          <br>
 
-                             <div id="lead_delete" class="col col-md-12 bg-success text-white"></div>
-
-                           
+                          <div id="lead_delete" class="col col-md-12 bg-success text-white"></div>
 
 
 
-                            <!-- '<a class="btn btn-danger" onclick="deleteLead('+ data.id_lead +')" ><span class="fas fa-trash-alt"></span</a>'; -->
+
+
+                          <!-- '<a class="btn btn-danger" onclick="deleteLead('+ data.id_lead +')" ><span class="fas fa-trash-alt"></span</a>'; -->
                       <!--     </div>
-                        </div> -->
+                      </div> -->
 
-                      </div>
                     </div>
-                      <br>
-                      <br>
+                  </div>
+                  <br>
+                  <br>
 
 
                       <!-- <div class="col col-md-6">
@@ -283,7 +285,9 @@
 
              </div>
 
-             <!--  end shadow -->
+           <?php endif; ?>
+
+           <!--  end shadow -->
     <!--  </div>  
     -->
 
