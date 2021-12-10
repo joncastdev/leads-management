@@ -6,10 +6,6 @@ class Users_Model extends CI_Model {
 
 	public function getUsers()
 	{
-		// $this->db->select( 'id_user, img, first_name, last_name, email, created_at, updated_at' );
-		// $this->db->from( 'users' );
-		// $this->db->order_by("id_post", "desc");
-
 		$this->db->select( 'A.id_user,A.img,A.first_name,A.last_name,A.email,C.country,D.state,B.role,A.created_at,A.updated_at' );
 		$this->db->from( 'users AS A' );
 		$this->db->join( 'roles AS B', 'A.id_role = B.id_role', 'inner' );
@@ -17,16 +13,9 @@ class Users_Model extends CI_Model {
 		$this->db->join( 'states AS D', 'A.id_state = D.id_state', 'inner' );
 		$this->db->order_by("id_user", "asc");		
 		
-		$query = $this->db->get()->result_array();
+		$query = $this->db->get()->result_array();		
 
-		// $query = $this->db->get()->result();
-
-		// $query = $this->db->get();
-
-		return $query;
-		// return $query->result_array();
-		// probando retornar como json
-		// return  json_encode($query);	
+		return $query;		
 	}
 
 
@@ -62,7 +51,7 @@ class Users_Model extends CI_Model {
 	{
 
 		$this->db->where('id_user', $id);
-		// 2 Where es como un and WHERE name = 'Joe' AND title = 'boss' AND status = 'active'
+		
 		$this->db->where('id_role', 2);		
 		$this->db->delete('users');
 		
@@ -101,12 +90,10 @@ class Users_Model extends CI_Model {
 		$this->db->select( 'B.state' );
 		$this->db->from( 'countrys AS A' );
 		$this->db->join( 'states AS B', 'A.id_country = B.id_country', 'inner' );
-		$this->db->where( 'A.id_country', $param );
-		// $this->db->where( 'A.id_country = 1' );
+		$this->db->where( 'A.id_country', $param );	
 
-		$query = $this->db->get()->result();
+		$query = $this->db->get()->result();		
 		
-		// return  json_encode($query);
 
 		return $query;		
 	}

@@ -2,9 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-class Leads extends OGC_Controller {
-
-	// public $algo;	
+class Leads extends OGC_Controller {	
 
 
 	public function __construct()
@@ -45,10 +43,6 @@ class Leads extends OGC_Controller {
 
 		$data= $this->Leads_Model->getLeads();		
 
-		// $this->output
-		// ->set_content_type('application/json')
-		// ->set_output(json_encode($data));
-
 		echo json_encode($data);	
 	}
 
@@ -66,10 +60,7 @@ class Leads extends OGC_Controller {
 				'msg_last_name' => form_error('last_name')						
 			);
 
-			echo json_encode($data);			
-			
-
-			// echo json_encode("All fields required");			
+			echo json_encode($data);					
 			
 		}else{
 
@@ -222,36 +213,20 @@ class Leads extends OGC_Controller {
 				'id_qualification' => $qualification,
 				'id_skype' => $id_skype,
 				'id_twitter' => $id_twitter,			
-				'description' => $description	  	
-				// 'created_at' => date('d-m-Y'),
-				// 'updated_at' => date('d-m-Y'),
-				// 'last_access' => date('H-i-s')
+				'description' => $description				
 			);
 
 
-
-		// $this->session->set_flashdata('personRegister', 'Persona registrada');
-
 			$this->db->insert('leads', $tUsers);
 
-		// redirect(base_url("users"));
 
-		// $this->email->from('contacto@jonathancastrodev.com', 'Jonathan Castro');
-		// $this->email->to($email);      
-		// $this->email->subject('Bienvenido a esta aplicacion de prueba');
-
-		// $this->email->message('Tu usuario'.$email.'y contraseña son:'.$password);
-
-		// $this->email->send();
 
 			$data=array(		
 				'msg_success' => "Register success",
 				
 			);
 
-			echo json_encode($data);	
-
-			// echo json_encode("Register success");
+			echo json_encode($data);			
 
 		}
 
@@ -262,40 +237,22 @@ class Leads extends OGC_Controller {
 
 	public function deleteLead($id)
 	{
-		// $this->session->set_flashdata('deleteLead', 'Lead Delete');
-
-			// $this->Leads_Model->deleteLeads($id);
-
 
 		$this->Leads_Model->deleteLeads($id);
 
-		// json_encode($this->session->flashdata('deleteLead'));
-
-
-		// $this->output
-		// ->set_content_type('application/json')
-		// ->set_output($this->session->flashdata('deleteLead'));
-
-		// $this->output
-		// ->set_content_type('application/json')
-		// ->set_output("Lead delete");
 
 		$data=array(		
 			'leadd' => "delete"
 
 		);
 
-		echo json_encode($data);
-
-		// redirect(base_url("leads"));
+		echo json_encode($data);		
 
 	}
 
 
 	public function view($id)
-	{
-
-		// echo json_encode($id);
+	{		
 
 		$datas= $this->Leads_Model->getLeadsById($id);		
 
@@ -319,13 +276,6 @@ class Leads extends OGC_Controller {
 
 		$datas= $this->Leads_Model->getLeadsById($id);	
 
-		// echo $datas;
-
-		// print_r($datas);
-
-
-
-
 
 		$this->email->from('contacto@opengiscrm.com', 'Test app');
 		$this->email->to($datas['email']);      
@@ -346,7 +296,6 @@ class Leads extends OGC_Controller {
 
 		$data = $this->Leads_Model->getLeads();
 
-		// $totalUsers = $this->Api_Model->countUsers();
 
 		$this->pdf = new fpdf();
 
@@ -354,54 +303,60 @@ class Leads extends OGC_Controller {
 
 		$this->pdf->AliasNbPages(); 
 
-		$this->pdf->SetTitle("Report Leads");
+		$this->pdf->SetTitle("OpenGisCRM Report Leads");
 		$this->pdf->SetLeftMargin(15);
 		$this->pdf->SetRightMargin(15);
 		$this->pdf->SetFillColor(200,200,200); 
 
 		$this->pdf->SetFont('Arial', 'B', 9);
 
-		//establesco el ancho de las filas
+
 		$this->pdf->SetWidths(array(15,15,15,25,15,15,15,15,15,15,30));  
 
-		// $this->pdf->Cell(15,5,'First name','TBL',0,'L','1');
-		// $this->pdf->Cell(15,5,'Last name','TB',0,'L','1');
-		// $this->pdf->Cell(15,5,'Country','TB',0,'L','1');
-		// $this->pdf->Cell(15,5,'State','TB',0,'L','1');
-		// $this->pdf->Cell(15,5,'Role','TB',0,'L','1');
-		// $this->pdf->Cell(15,5,'Created at','TB',0,'L','1');
-		// $this->pdf->Cell(15,5,'First name','TBL',0,'L','1');
-		// $this->pdf->Cell(15,5,'Last name','TB',0,'L','1');
-		// $this->pdf->Cell(15,5,'Country','TB',0,'L','1');
-		// $this->pdf->Cell(15,5,'State','TB',0,'L','1');
-		// $this->pdf->Cell(15,5,'fin','TB',0,'L','1');
+		
 		$this->pdf->Row(array('f name','l name','company','email','street','state','city','country','zipcode','phone','description'));
 
-		// $this->pdf->Ln(7);
+
 
 		foreach ($data as $datos) {
 
-			// $this->pdf->Cell(40,5,$datos['first_name'],'B',0,'L',0);
-			// $this->pdf->Cell(40,5,$datos['last_name'],'B',0,'L',0);
-			// $this->pdf->Cell(40,5,$datos['country'],'B',0,'L',0);
-			// $this->pdf->Cell(40,5,$datos['state'],'B',0,'L',0);
+			
 			$this->pdf->Row(array($datos['first_name'],$datos['last_name'],$datos['company'],$datos['email'],$datos['street'],$datos['state'],$datos['city'],$datos['country'],$datos['postal_code'],$datos['phone'],$datos['description']));
-			// $this->pdf->Cell(40,5,$datos['role'],'B',0,'L',0);
-			// $this->pdf->Cell(40,5,$datos['created_at'],'B',0,'L',0);        
-
-
-			// $this->pdf->Ln(5);
+			
 		}
 
 		$this->pdf->Cell(40,5,'Total By Date:','TB',0,'L','1');
 		$this->pdf->Cell(40,5, date("d-m-y"),'B',0,'L',0);
+		$this->pdf->Cell(40,5,'By OpenGisCRM :','TB',0,'L','1');
+		$this->pdf->Cell(40,5, 'https://opengiscrm.com/','B',0,'L',0);
 		$this->pdf->Ln(5);
-		// $this->pdf->Cell(40,5,'Total Users:','TB',0,'L','1');
-		// $this->pdf->Cell(40,5, $totalUsers['totalUsers']->totalusers,'B',0,'L',0);
+		
 
 
-		// $this->pdf->Output("Report leads.pdf", 'D');
-		$this->pdf->Output("Report leads.pdf", 'I');
+		$this->pdf->Output("OpenGisCRM Report leads.pdf", 'D');
+
+	}
+
+	public function leadsExcel()
+	{		
+
+		$data = $this->Leads_Model->getLeadsExcel();
+
+		$this->phpexcel->setActiveSheetIndex(0);
+		
+		$this->phpexcel->getActiveSheet()->setTitle('OpenGisCRM Report Leads');       
+
+		$this->phpexcel->getActiveSheet()->fromArray($data);
+
+
+		$filename='Report users.xls'; 
+		header('Content-Type: application/vnd.ms-excel'); 
+		header('Content-Disposition: attachment;filename="'.$filename.'"'); 
+		header('Cache-Control: max-age=0'); 
+
+		$objWriter = PHPExcel_IOFactory::createWriter($this->phpexcel, 'Excel5');  
+
+		$objWriter->save('php://output');
 
 
 	}

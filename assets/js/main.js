@@ -12,15 +12,13 @@ $.ajax({
 })
 .done(function(result) {
 
- // console.log(result); 
 
  $.each(result, function(index, val) {
+  
+  $("#country").append('<option value="'+ val.id_country + '">' + val.country + '</option>')
+  
 
-    // console.log(val);
-    $("#country").append('<option value="'+ val.id_country + '">' + val.country + '</option>')
-   // $("#country").append('<option>' + val.country + '</option>')
-
- });
+});
 });
 
 
@@ -31,12 +29,11 @@ $.ajax({
 })
 .done(function(result) {
 
- // console.log(result); 
 
  $.each(result, function(index, val) {
 
    $("#state").append('<option value="'+ val.id_state + '">' + val.state + '</option>')
-   // $("#state").append('<option>' + val.state + '</option>')
+   
 
  });
 });
@@ -49,12 +46,11 @@ $.ajax({
 })
 .done(function(result) {
 
- // console.log(result); 
 
  $.each(result, function(index, val) {
 
    $("#source").append('<option value="'+ val.id_source + '">' + val.source + '</option>')
-   // $("#state").append('<option>' + val.state + '</option>')
+   
 
  });
 });
@@ -66,12 +62,11 @@ $.ajax({
 })
 .done(function(result) {
 
- // console.log(result); 
 
  $.each(result, function(index, val) {
 
    $("#sector").append('<option value="'+ val.id_sector + '">' + val.sector + '</option>')
-   // $("#state").append('<option>' + val.state + '</option>')
+   
 
  });
 });
@@ -83,12 +78,11 @@ $.ajax({
 })
 .done(function(result) {
 
- // console.log(result); 
 
  $.each(result, function(index, val) {
 
    $("#state_client").append('<option value="'+ val.id_state_client + '">' + val.state_client + '</option>')
-   // $("#state").append('<option>' + val.state + '</option>')
+   
 
  });
 });
@@ -100,12 +94,11 @@ $.ajax({
 })
 .done(function(result) {
 
- // console.log(result); 
 
  $.each(result, function(index, val) {
 
    $("#qualification").append('<option value="'+ val.id_qualification + '">' + val.qualification + '</option>')
-   // $("#state").append('<option>' + val.state + '</option>')
+   
 
  });
 });
@@ -119,8 +112,6 @@ $('#country').change(function(event) {
   var countryVal = $("#country").val();
 
   $.get(BASE_URL + 'api/getcombo',{countryVal: countryVal}, function(data){
-
-
 
       // parse the string
       var par = JSON.parse(data);
@@ -143,6 +134,11 @@ $('#country').change(function(event) {
 function pdfLeads(){
 
   window.location=BASE_URL + 'leads/leadspdf';
+}
+
+function excelLeads(){
+
+  window.location=BASE_URL + 'leads/leadsExcel';
 }
 
 
@@ -179,7 +175,6 @@ $("#leadsAdd").submit(function(event) {
   var id_twitter = $("#id_twitter").val();
   var description = $("#description").val();
 
-  // console.log(role);
 
   $.post(BASE_URL + 'leads/register',
   {
@@ -211,25 +206,16 @@ $("#leadsAdd").submit(function(event) {
     /*optional stuff to do after success */
 
     var par = JSON.parse(data);
-
-    // console.log(data);
+    
 
     $("#msg_first_name").html(par.msg_first_name);
     $("#msg_last_name").html(par.msg_last_name);
 
-    $("#msg_success").html(par.msg_success);
+    $("#msg_success").html(par.msg_success);     
 
-      // console.log(par);
+    location.reload();
 
-      // table.ajax.reload();
-
-      location.reload();
-
-
-
-     //if (par.msg_success == "Register success") {     
-      //window.location=BASE_URL + 'leads';
-    //}     
+    
 
   });
 
