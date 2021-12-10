@@ -51,8 +51,8 @@ class Dashboard extends OGC_Controller {
 
 		$data = array();
 
-		$data['navbar'] = $this->load->view('templates/users/inc/navbar',$this->userInfo,TRUE);
-		$data['sidebar'] = $this->load->view('templates/users/inc/sidebar',$this->userInfo,TRUE);
+		$data['navbar_user'] = $this->load->view('templates/user/inc/navbar',$this->userInfo,TRUE);
+		$data['sidebar_user'] = $this->load->view('templates/user/inc/sidebar',$this->userInfo,TRUE);
 		$data['title'] = $this->title;
 		
 		$this->load_view_user('templates/user/dashboard',$data);

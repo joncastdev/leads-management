@@ -14,7 +14,7 @@ class Leads extends OGC_Controller {
 		$this->load->library('fpdf');
 		$this->load->library('phpexcel');		
 
-		$this->auth();			
+		$this->authAdmin();			
 
 	}
 
@@ -343,7 +343,7 @@ class Leads extends OGC_Controller {
 		$data = $this->Leads_Model->getLeadsExcel();
 
 		$this->phpexcel->setActiveSheetIndex(0);
-		
+
 		$this->phpexcel->getActiveSheet()->setTitle('OpenGisCRM Report Leads');       
 
 		$this->phpexcel->getActiveSheet()->fromArray($data);
