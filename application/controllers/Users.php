@@ -9,7 +9,7 @@ class Users extends OGC_Controller {
 	{		
 		parent::__construct();
 
-		$this->auth();			
+		$this->authAdmin();				
 
 	}
 

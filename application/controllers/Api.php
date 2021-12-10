@@ -9,7 +9,7 @@ class Api extends OGC_Controller {
 
 		$this->load->model('Api_Model');
 
-		$this->auth();		
+		$this->authAdmin();		
 	}
 
 
