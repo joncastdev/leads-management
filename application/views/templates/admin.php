@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
-  <meta name="description" content="jonathancastrodev crm tu crm personalizado ">
-  <meta name="keywords" content="crm,clientes,reportes"/>
+  <meta name="description" content="Open Source Gis CRM Software - CodeIgniter 3">
+  <meta name="keywords" content="crm,clients,leads,reports"/>
   <meta name="author" content="Jonathan Castro">
   <meta name="copyright" content="Jonathan Castro" />
   
@@ -14,26 +14,26 @@
   <title><?php echo $title;?></title>  
 
 
- <!--  <link href="<?php //echo base_url();?>assets/css/jquery-ui.css" rel="stylesheet" type="text/css"> -->
+  <!--  <link href="<?php //echo base_url();?>assets/css/jquery-ui.css" rel="stylesheet" type="text/css"> -->
 
 
 
-    <link href="<?php echo base_url();?>assets/css/modified.css" rel="stylesheet" type="text/css">
+  <link href="<?php echo base_url();?>assets/css/modified.css" rel="stylesheet" type="text/css">
 
 
   <!--  <link href="<?php //echo base_url();?>assets/css/jquery-te-1.4.0.css" rel="stylesheet" type="text/css"> -->
 
- 
+  
 
 
 
   <script src="<?php echo base_url();?>assets/theme/vendor/jquery/jquery.min.js"></script>
 
- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
- <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
- <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
- 
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+  
   <!-- <script src="<?php //echo base_url();?>assets/js/jquery-te-1.4.0.min.js"></script> -->
 
 
@@ -43,7 +43,7 @@
   
 
   <!-- Custom fonts for this template-->
- <!--  <link href="<?php //echo base_url();?>assets/theme/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
+  <!--  <link href="<?php //echo base_url();?>assets/theme/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
 
   <link href="<?php echo base_url();?>assets/theme/vendor/fontawesome-free/css/all.css" rel="stylesheet" type="text/css">
 

@@ -1,215 +1,215 @@
 // alert("");
-$("button").click(function(){
-    $("p").toggle();
-  });
-
+// $("button").click(function(){
+//     $("p").toggle();
+//   });
+// cargar el modal al cargar pagina
 $( document ).ready(function() {
   $('#modalFormLogin').modal('toggle')
 });
 
 
 
-// // var table = $('#leads').DataTable();
+// var table = $('#leads').DataTable();
 
-// //formulario ajax
-// $("#logForm").submit(function(event) {
-//   event.preventDefault();
+//formulario ajax
+$("#logForm").submit(function(event) {
+  event.preventDefault();
 
-//   var email = $("#email").val();
-//   var password = $("#password").val();
+  var email = $("#email").val();
+  var password = $("#password").val();
 
 
-//   $.post(BASE_URL + 'login/signin',
-//   {    
-//     email: email,
-//     password: password   
-//   }, function(data) {
-//     /*optional stuff to do after success */
+  $.post(BASE_URL + 'login/signin',
+  {    
+    email: email,
+    password: password   
+  }, function(data) {
+    /*optional stuff to do after success */
 
-//     // data viene como string
-//     // console.log(data);
+    // data viene como string
+    // console.log(data);
 
-//       // convierto la data en objeto
-//       var par = JSON.parse(data);
+      // convierto la data en objeto
+      var par = JSON.parse(data);
 
-//       console.log(par);
+      console.log(par);
 
-//       $("#msg_email").html(par.msg_email);
-//       $("#msg_password").html(par.msg_password);
+      $("#msg_email").html(par.msg_email);
+      $("#msg_password").html(par.msg_password);
 
-//       $("#mensaje").html(par.msg_pass_check);
+      $("#mensaje").html(par.msg_pass_check);
 
-//       // $("#msg_user").html(par.msg_user);
+      // $("#msg_user").html(par.msg_user);
 
-//       switch (par) {
-//        case "admin":
-//        window.location=BASE_URL + 'dashboard';
-//        break;
-//        case "user":
-//        window.location=BASE_URL + 'dashboard';
-//        break;      
-//      }
+      switch (par) {
+       case "admin":
+       window.location=BASE_URL + 'dashboard';
+       break;
+       case "user":
+       window.location=BASE_URL + 'dashboard';
+       break;      
+     }
 
-//     // if (par == "admin") {     
-//     //   window.location=BASE_URL + 'dashboard';
-//     // }
+    // if (par == "admin") {     
+    //   window.location=BASE_URL + 'dashboard';
+    // }
 
-//     // if (par == "user") {     
-//     //   window.location=BASE_URL + 'dashboard';
-//     // }     
+    // if (par == "user") {     
+    //   window.location=BASE_URL + 'dashboard';
+    // }     
 
-//   });
+  });
 
 
 
 
 
-// });
+});
 
 
 
 
-// // // cargo los countrys con ajax
-// $.ajax({
-//   url: BASE_URL+'api/getcountrys',   
-//   dataType: 'json'    
-// })
-// .done(function(result) {
+// // cargo los countrys con ajax
+$.ajax({
+  url: BASE_URL+'api/getcountrys',   
+  dataType: 'json'    
+})
+.done(function(result) {
 
-//  // console.log(result); 
+ // console.log(result); 
 
-//  $.each(result, function(index, val) {
+ $.each(result, function(index, val) {
 
-//     // console.log(val);
-//     $("#country").append('<option value="'+ val.id_country + '">' + val.country + '</option>')
-//    // $("#country").append('<option>' + val.country + '</option>')
+    // console.log(val);
+    $("#country").append('<option value="'+ val.id_country + '">' + val.country + '</option>')
+   // $("#country").append('<option>' + val.country + '</option>')
 
-//  });
-// });
+ });
+});
 
 
-// // // cargo los states con ajax
-// $.ajax({
-//   url: BASE_URL+'api/getstates',   
-//   dataType: 'json'    
-// })
-// .done(function(result) {
+// // cargo los states con ajax
+$.ajax({
+  url: BASE_URL+'api/getstates',   
+  dataType: 'json'    
+})
+.done(function(result) {
 
-//  // console.log(result); 
+ // console.log(result); 
 
-//  $.each(result, function(index, val) {
+ $.each(result, function(index, val) {
 
-//    $("#state").append('<option value="'+ val.id_state + '">' + val.state + '</option>')
-//    // $("#state").append('<option>' + val.state + '</option>')
+   $("#state").append('<option value="'+ val.id_state + '">' + val.state + '</option>')
+   // $("#state").append('<option>' + val.state + '</option>')
 
-//  });
-// });
+ });
+});
 
 
-// // // cargo los states con ajax
-// $.ajax({
-//   url: BASE_URL+'api/getsources',   
-//   dataType: 'json'    
-// })
-// .done(function(result) {
+// // cargo los states con ajax
+$.ajax({
+  url: BASE_URL+'api/getsources',   
+  dataType: 'json'    
+})
+.done(function(result) {
 
-//  // console.log(result); 
+ // console.log(result); 
 
-//  $.each(result, function(index, val) {
+ $.each(result, function(index, val) {
 
-//    $("#source").append('<option value="'+ val.id_source + '">' + val.source + '</option>')
-//    // $("#state").append('<option>' + val.state + '</option>')
+   $("#source").append('<option value="'+ val.id_source + '">' + val.source + '</option>')
+   // $("#state").append('<option>' + val.state + '</option>')
 
-//  });
-// });
+ });
+});
 
-// // // cargo los states con ajax
-// $.ajax({
-//   url: BASE_URL+'api/getsectors',   
-//   dataType: 'json'    
-// })
-// .done(function(result) {
+// // cargo los states con ajax
+$.ajax({
+  url: BASE_URL+'api/getsectors',   
+  dataType: 'json'    
+})
+.done(function(result) {
 
-//  // console.log(result); 
+ // console.log(result); 
 
-//  $.each(result, function(index, val) {
+ $.each(result, function(index, val) {
 
-//    $("#sector").append('<option value="'+ val.id_sector + '">' + val.sector + '</option>')
-//    // $("#state").append('<option>' + val.state + '</option>')
+   $("#sector").append('<option value="'+ val.id_sector + '">' + val.sector + '</option>')
+   // $("#state").append('<option>' + val.state + '</option>')
 
-//  });
-// });
+ });
+});
 
-// // // cargo los states con ajax
-// $.ajax({
-//   url: BASE_URL+'api/getstateclients',   
-//   dataType: 'json'    
-// })
-// .done(function(result) {
+// // cargo los states con ajax
+$.ajax({
+  url: BASE_URL+'api/getstateclients',   
+  dataType: 'json'    
+})
+.done(function(result) {
 
-//  // console.log(result); 
+ // console.log(result); 
 
-//  $.each(result, function(index, val) {
+ $.each(result, function(index, val) {
 
-//    $("#state_client").append('<option value="'+ val.id_state_client + '">' + val.state_client + '</option>')
-//    // $("#state").append('<option>' + val.state + '</option>')
+   $("#state_client").append('<option value="'+ val.id_state_client + '">' + val.state_client + '</option>')
+   // $("#state").append('<option>' + val.state + '</option>')
 
-//  });
-// });
+ });
+});
 
-// // // cargo los states con ajax
-// $.ajax({
-//   url: BASE_URL+'api/getqualifications',   
-//   dataType: 'json'    
-// })
-// .done(function(result) {
+// // cargo los states con ajax
+$.ajax({
+  url: BASE_URL+'api/getqualifications',   
+  dataType: 'json'    
+})
+.done(function(result) {
 
-//  // console.log(result); 
+ // console.log(result); 
 
-//  $.each(result, function(index, val) {
+ $.each(result, function(index, val) {
 
-//    $("#qualification").append('<option value="'+ val.id_qualification + '">' + val.qualification + '</option>')
-//    // $("#state").append('<option>' + val.state + '</option>')
+   $("#qualification").append('<option value="'+ val.id_qualification + '">' + val.qualification + '</option>')
+   // $("#state").append('<option>' + val.state + '</option>')
 
-//  });
-// });
+ });
+});
 
 
 
 
 
 
-// // // combo dependiente country/state
-// $('#country').change(function(event) {
+// // combo dependiente country/state
+$('#country').change(function(event) {
 
-//   var countryVal = $("#country").val();
+  var countryVal = $("#country").val();
 
-//   $.get(BASE_URL + 'api/getcombo',{countryVal: countryVal}, function(data){
+  $.get(BASE_URL + 'api/getcombo',{countryVal: countryVal}, function(data){
 
 
 
-//       // parseo el string
-//       var par = JSON.parse(data);
+      // parseo el string
+      var par = JSON.parse(data);
 
 
-//       $("#state").html('<option value="'+ par[0].id_state + '">' + par[0].state + '</option>');
+      $("#state").html('<option value="'+ par[0].id_state + '">' + par[0].state + '</option>');
 
 
-//       // remuevo la opcion Select Country
-//       $("#option").remove();
+      // remuevo la opcion Select Country
+      $("#option").remove();
 
 
-//     });
+    });
 
 
 
-// });
+});
 
 
-// function pdfLeads(){
+function pdfLeads(){
 
-//   window.location=BASE_URL + 'leads/leadspdf';
-// }
+  window.location=BASE_URL + 'leads/leadspdf';
+}
 
 
 
@@ -302,6 +302,8 @@ $( document ).ready(function() {
 
 
 // });
+
+
 
 
 
