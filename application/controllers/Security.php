@@ -58,55 +58,28 @@ class Security extends OGC_Controller {
 					'last_name' => 	$userData[0]->last_name,	
 					'email' => $userData[0]->email,		
 					'role' => $userData[0]->role								
-				);			
+				);
 
-
-
-				// se establece o agrega la info del usuario para la session
+				
 				$this->session->set_userdata('user',$data);
 
-				// utlizo la info del usuario con session iniciada
+				
 				$userInfo = $this->session->userdata('user');
 
-
-				// metodo para cargar vista segun nivel de usuario
 				$this->nivUsers($userInfo);
 
-				// echo json_encode($userData);
-				// echo json_encode($userInfo);
-
-				// metodo para actualizar el ultimo acceso
+				
 				$this->lastAccess($email);
 
 
 
 
 			}else{  //end password verify
-				// validacion ei existe un usuario con ese hash de contraseña
+				
 
+				
 
-				// $this->session->set_flashdata('passwordCheck', 'usuario o contraseña incorrecta');
-
-				// echo json_encode("User or password incorrect");
-
-
-				// devuelte esto el metodo flashdata "usuario o contrase\u00f1a incorrecta", pero no funciona con form validation
-				// $data=array(		
-				// 	'msg_pass_check' => $this->session->flashdata('passwordCheck')					
-				// );
-
-				// $msg_user_check = "User or password incorrect";	
-				// $data=array(		
-				// 	'msg_pass_check' => $msg_user_check					
-				// );
-
-
-				// echo json_encode($data);
-				$this->session->flashdata('passwordCheck','Username or password incorrect');
-
-				redirect(base_url());
-
-				// redirect(base_url("login"));
+				$this->index();
 
 			}
 
@@ -116,8 +89,6 @@ class Security extends OGC_Controller {
 
 }
 
-
-// funcion para cargar vistas segun nivel de usuario
 public function nivUsers($userInfo)
 {
 
@@ -129,7 +100,7 @@ public function nivUsers($userInfo)
 		redirect(base_url('dashboard'));		
 		break;		
 		case "user":		
-		echo json_encode("user");			
+		redirect(base_url('dashboard'));			
 		break;					
 	}
 
@@ -150,14 +121,11 @@ public function lastAccess($email)
 
 
 public function signOut()
-{ 
-	
-	// primero elimino la info del usuario de la session,
-	// osea la variable user
+{ 	
+
 	$this->session->unset_userdata('user');
 
-	// ahora verifico que no exista el usuario,para poder hacer un flashdata
-	// en la vista, flash data no funciona con sess_destroy
+	
 	if ($this->session->userdata('user') === NULL) {				
 
 		$this->session->set_flashdata('closeSession', 'You have closed session');
@@ -166,7 +134,7 @@ public function signOut()
 
 	}
 
-	// Para borrar la sesión actual por completo
+	
 	$this->session->sess_destroy();		
 
 }

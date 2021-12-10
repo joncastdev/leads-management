@@ -303,7 +303,7 @@ class Leads extends OGC_Controller {
 
 		$this->pdf->AliasNbPages(); 
 
-		$this->pdf->SetTitle("Report Leads");
+		$this->pdf->SetTitle("OpenGisCRM Report Leads");
 		$this->pdf->SetLeftMargin(15);
 		$this->pdf->SetRightMargin(15);
 		$this->pdf->SetFillColor(200,200,200); 
@@ -343,8 +343,7 @@ class Leads extends OGC_Controller {
 		$data = $this->Leads_Model->getLeadsExcel();
 
 		$this->phpexcel->setActiveSheetIndex(0);
-
-        //name the worksheet
+		
 		$this->phpexcel->getActiveSheet()->setTitle('OpenGisCRM Report Leads');       
 
 		$this->phpexcel->getActiveSheet()->fromArray($data);
