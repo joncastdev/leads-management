@@ -1,11 +1,11 @@
 // alert("");
-// $("button").click(function(){
-//     $("p").toggle();
-//   });
-// cargar el modal al cargar pagina
-// $( document ).ready(function() {
-//   $('#modalFormLogin').modal('toggle')
-// });
+$("button").click(function(){
+    $("p").toggle();
+  });
+
+$( document ).ready(function() {
+  $('#modalFormLogin').modal('toggle')
+});
 
 
 
