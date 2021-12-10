@@ -379,7 +379,7 @@ class Migration_create_data extends CI_Migration {
                 'unsigned' => TRUE,
                 'auto_increment' => TRUE
             ),
-            'sectors' => array(
+            'sector' => array(
                 'type' => 'VARCHAR',
                 'constraint' => '50',
             ),                                                       
@@ -392,12 +392,12 @@ class Migration_create_data extends CI_Migration {
 
         $this->db->insert('sectors', [
             'id_sector' => 1,
-            'sectors' => '-None-'            
+            'sector' => '-None-'            
         ]);
 
          $this->db->insert('sectors', [
             'id_sector' => 2,
-            'sectors' => 'ASP (Application Service Provider)'            
+            'sector' => 'ASP (Application Service Provider)'            
         ]);
 
 

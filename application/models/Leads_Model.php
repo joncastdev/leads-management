@@ -5,10 +5,9 @@ class Leads_Model extends CI_Model {
 
 
 	public function getLeads()
-	{		
-
-		// $this->db->select( 'A.id_lead,A.first_name,A.last_name,A.company,A.email,A.img,A.street,A.state,A.city,A.country,A.postal_code,A.title,A.phone,A.cell_phone,A.source,A.sector,A.income,A.fax,A.website,A.state_client,A.quantity_worker,A.qualification,A.id_skype,A.id_twiiter,A.description' );
-		$this->db->select( 'A.id_lead,A.first_name,A.last_name,A.company,A.email,A.img,B.state,A.street,B.state,A.city,C.country,A.postal_code,A.title,A.phone,A.cell_phone,D.source,E.sectors,A.income,A.fax,A.website,F.state_client,A.quantity_worker,H.id_qualification,A.id_skype,A.id_twitter,A.description' );
+	{
+		
+		$this->db->select( 'A.id_lead,A.first_name,A.last_name,A.company,A.email,A.img,B.state,A.street,B.state,A.city,C.country,A.postal_code,A.title,A.phone,A.cell_phone,D.source,E.sector,A.income,A.fax,A.website,F.state_client,A.quantity_worker,H.id_qualification,A.id_skype,A.id_twitter,A.description' );
 		$this->db->from( 'leads AS A' );
 		$this->db->join( 'states AS B', 'A.id_state = B.id_state', 'inner' );
 		$this->db->join( 'countrys AS C', 'A.id_country = C.id_country', 'inner' );
@@ -16,27 +15,19 @@ class Leads_Model extends CI_Model {
 		$this->db->join( 'sectors AS E', 'A.id_sector = E.id_sector', 'inner' );
 		$this->db->join( 'state_clients AS F', 'A.id_state_client = F.id_state_client', 'inner' );
 		$this->db->join( 'qualifications AS H', 'A.id_qualification = H.id_qualification', 'inner' );
-		// $this->db->join( 'roles AS B', 'A.id_role = B.id_role', 'inner' );
-		// $this->db->join( 'countrys AS C', 'A.id_country = C.id_country', 'inner' );
-		// $this->db->join( 'states AS D', 'A.id_state = D.id_state', 'inner' );
+		
 		$this->db->order_by("id_lead", "asc");		
 		
-		$query = $this->db->get()->result_array();
-
-		// $query = $this->db->get()->result();
-
-		// $query = $this->db->get();
+		$query = $this->db->get()->result_array();		
 
 		return $query;
-		// return $query->result_array();
-		// probando retornar como json
-		// return  json_encode($query);	
+		
 	}
 
 
 	public function getLeadsById($id)
 	{
-		$this->db->select( 'A.id_lead,A.first_name,A.last_name,A.company,A.email,A.img,B.state,A.street,B.state,A.city,C.country,A.postal_code,A.title,A.phone,A.cell_phone,D.source,E.sector,A.income,A.fax,A.website,F.state_client,A.quantity_worker,H.qualification,A.id_skype,A.id_twiiter,A.description' );
+		$this->db->select( 'A.id_lead,A.first_name,A.last_name,A.company,A.email,A.img,B.state,A.street,B.state,A.city,C.country,A.postal_code,A.title,A.phone,A.cell_phone,D.source,E.sector,A.income,A.fax,A.website,F.state_client,A.quantity_worker,H.qualification,A.id_skype,A.id_twitter,A.description' );
 		$this->db->from( 'leads AS A' );
 		$this->db->join( 'states AS B', 'A.id_state = B.id_state', 'inner' );
 		$this->db->join( 'countrys AS C', 'A.id_country = C.id_country', 'inner' );
@@ -106,13 +97,10 @@ class Leads_Model extends CI_Model {
 		$this->db->select( 'B.state' );
 		$this->db->from( 'countrys AS A' );
 		$this->db->join( 'states AS B', 'A.id_country = B.id_country', 'inner' );
-		$this->db->where( 'A.id_country', $param );
-		// $this->db->where( 'A.id_country = 1' );
+		$this->db->where( 'A.id_country', $param );		
 
 		$query = $this->db->get()->result();
 		
-		// return  json_encode($query);
-
 		return $query;		
 	}
 

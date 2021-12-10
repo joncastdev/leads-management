@@ -344,7 +344,7 @@
   </div>
 
   <div class="col-sm-4" >
-   <input type="text" class="form-control form-control-user" name="id_twiiter" id="id_twiiter"  placeholder="Twiiter">
+   <input type="text" class="form-control form-control-user" name="id_twitter" id="id_twitter"  placeholder="Twitter">
  </div>
 
 

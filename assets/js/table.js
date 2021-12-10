@@ -1,19 +1,3 @@
-// tablas
-
-// $("button").click(function(){
-//     $("p").toggle();
-//   });
-
-// $("#sidebarToggle, #sidebarToggleTop").on('click', function(e) {
-//     $("body").toggleClass("sidebar-toggled");
-//     $(".sidebar").toggleClass("toggled");
-//     if ($(".sidebar").hasClass("toggled")) {
-//       $('.sidebar .collapse').collapse('hide');
-//     };
-//   });
-
-// declaro la variable afuera de las funciones, por que si declaro
-// adentro de las funciones esta fuera del scope
 var table;
 
 $.ajax({
@@ -22,12 +6,15 @@ $.ajax({
   type: 'POST',
   cache: false,
   success :  function(result)
-  {		
+  {
+     var par = JSON.parse(result);
+  // console.log(result);
+  // alert(result);		
    table = $('#leads').DataTable({
 			// "searching": false, //esta es la propiedad para el filtrado
 			"bProcessing": true,
 			// rowId: 'staffId',
-			data: result,               
+			data: par,               
 			columns: [
 			     // '<img src=" ' + BASE_URL + 'uploads/thumbnails/' + result.img + ' " class="img-responsive img-circle" />'           
                 // { "mData": "BASE_URL" },
@@ -87,7 +74,8 @@ $.ajax({
 
     // reloadTable(table);
 
-
+// alert(result);    
+   
 	}
 });
 
@@ -215,19 +203,6 @@ $("#leadsAdd").submit(function(event) {
 function deleteLead(params)
 {
 
-    // swal("Hola mundo!");
-
-    // console.log(params);
-    // console.log(dos);
-
-    // if (datos === 'admin') {
-
-    //   isAdministrator();
-
-    // }
-
-
-
 
     swal({
       title: 'Are you sure to delete this record?',
@@ -240,7 +215,7 @@ function deleteLead(params)
 
     }).then(function(result) {      
 
-         // verificamos si ahy resultados
+        
          if (result) {
 
           confirmDelete(params);
@@ -253,13 +228,11 @@ function deleteLead(params)
 
   }
 
-  // funcion para ir a la ruta para eliminar
+
   function confirmDelete(params)
   {
 
-    // window.location=BASE_URL + 'leads/deleteLead/' + params;
-
-    // // cargo los countrys con ajax
+   
     $.ajax({
       url: BASE_URL+'leads/deletelead/' + params,   
       dataType: 'json'    
@@ -268,7 +241,7 @@ function deleteLead(params)
 
         // table.ajax.reload();
 
-        console.log(result);
+        // console.log(result);
 
         // table.ajax.reload(); 
 
@@ -279,11 +252,13 @@ function deleteLead(params)
         // var par = JSON.parse(result);
 
           // console.log(par.leadd);
-          console.log(result.leadd);
+          // console.log(result.leadd);
 
         if (result.leadd == 'delete') {
            // window.location=BASE_URL + 'leads';
            $("#lead_delete").html('<p>'+result.leadd+'<p>');
+
+            location.reload();
         }
 
 
