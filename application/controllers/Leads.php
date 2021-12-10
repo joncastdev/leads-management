@@ -11,7 +11,10 @@ class Leads extends OGC_Controller {
 	{		
 		parent::__construct();
 
-		$this->load->model('Leads_Model');	
+		$this->load->model('Leads_Model');
+
+		$this->load->library('fpdf');
+		$this->load->library('phpexcel');		
 
 		$this->auth();			
 
@@ -278,9 +281,9 @@ class Leads extends OGC_Controller {
 		// ->set_output("Lead delete");
 
 		$data=array(		
-				'leadd' => "delete"
-				
-			);
+			'leadd' => "delete"
+
+		);
 
 		echo json_encode($data);
 
@@ -338,7 +341,7 @@ class Leads extends OGC_Controller {
 	}
 
 
-		public function leadsPdf()
+	public function leadsPdf()
 	{ 
 
 		$data = $this->Leads_Model->getLeads();

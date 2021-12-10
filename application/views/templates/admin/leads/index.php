@@ -58,7 +58,9 @@
       </div> -->
       <br>
 
-      <div class="card-body">
+      <?php if($data): ?>
+
+        <div class="card-body">
         <!-- <div class="text-center">
         -->
         
@@ -100,7 +102,7 @@
 
                               <th>Img</th>
                               <th>Name</th>
-                             <!--  <th>Last Name</th> -->
+                              <!--  <th>Last Name</th> -->
                               <th>Company</th>                         
                               <th>Email</th>
                               <th>Country</th>
@@ -170,7 +172,9 @@
 
              </div>
 
-             <!--  end shadow -->
+           <?php endif; ?>
+
+           <!--  end shadow -->
     <!--  </div>  
     -->
 

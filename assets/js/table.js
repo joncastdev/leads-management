@@ -10,8 +10,7 @@ $.ajax({
      var par = JSON.parse(result);
   // console.log(result);
   // alert(result);		
-   table = $('#leads').DataTable({
-			// "searching": false, //esta es la propiedad para el filtrado
+   table = $('#leads').DataTable({			
 			"bProcessing": true,
 			// rowId: 'staffId',
 			data: par,               
