@@ -52,3 +52,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'security';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+// routes login
+$route['login']['get'] = 'security/index';
+
+$route['login']['post'] = 'security/signin';

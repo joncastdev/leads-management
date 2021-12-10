@@ -13,16 +13,16 @@
 
     </h4>
 
-    <h4 class="bg-danger">
+   <!--  <h4 class="bg-danger">
         ok
 
-        <?php if($this->session->flashdata('passwordCheck')): ?>
+        <?php //if($this->session->flashdata('passwordCheck')): ?>
 
-          <?php echo $this->session->flashdata('passwordCheck'); ?>
+          <?php //echo $this->session->flashdata('passwordCheck'); ?>
 
-        <?php endif; ?>
+        <?php //endif; ?>
 
-      </h4>
+      </h4> -->
     
     
   </div>
@@ -70,7 +70,7 @@
        <br> -->
        <h4 class="modal-title">Log In</h4>
        <h4 class="bg-danger">
-        ok
+        
 
         <?php if($this->session->flashdata('passwordCheck')): ?>
 
@@ -82,7 +82,7 @@
     </div>
     <div class="modal-body">
 
-      <?php echo form_open('security/signin') ?>      
+      <?php echo form_open('login') ?>      
 
       <div class="form-group">
         <input type="email" class="form-control form-control-user" name="email" id="email"  placeholder="Email" value="admin@hotmail.com">
