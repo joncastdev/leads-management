@@ -85,13 +85,13 @@
       <?php echo form_open('login') ?>      
 
       <div class="form-group">
-        <input type="email" class="form-control form-control-user" name="email" id="email"  placeholder="Email" value="admin@hotmail.com">
+        <input type="email" class="form-control form-control-user" name="email" id="email"  placeholder="Email" value="jonathancastro@opengiscrm.com">
         <div class="text-danger"><?php echo form_error('email');  ?></div>
         <div class="text-danger" id="msg_email"></div>
       </div>
 
       <div class="form-group">
-        <input type="password" class="form-control form-control-user" name="password" id="password"  placeholder="Password" value="admin">
+        <input type="password" class="form-control form-control-user" name="password" id="password"  placeholder="Password" value="123">
         <div class="text-danger"><?php echo form_error('password');  ?></div>
         <div class="text-danger" id="msg_password"></div>
       </div>      

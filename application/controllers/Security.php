@@ -125,8 +125,8 @@ public function nivUsers($userInfo)
 	switch ($userInfo['role']) {
 		case "admin":			
 		echo json_encode("admin");
-		// no acepta el redirect, por culpa de prevent default
-		// redirect(base_url('dashboard'));		
+		
+		redirect(base_url('dashboard'));		
 		break;		
 		case "user":		
 		echo json_encode("user");			
@@ -140,7 +140,7 @@ public function lastAccess($email)
 {
 
 	$params=array(
-		'last_access' => date('H-i-s')			
+		'last_access' => date('y-m-d')			
 	);
 
 	$this->Security_Model->LastAccess($email,$params);

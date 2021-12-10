@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
-class Dashboard extends MAIN_Controller {
+class Dashboard extends OGC_Controller {
 
 	
 
@@ -59,8 +59,8 @@ class Dashboard extends MAIN_Controller {
 
 
 		$data = array();	
-		$data['navbar_admin'] = $this->load->view('admin/inc/navbar',$this->userInfo,TRUE);
-		$data['sidebar_admin'] = $this->load->view('admin/inc/sidebar',$this->userInfo,TRUE);
+		$data['navbar_admin'] = $this->load->view('templates/admin/inc/navbar',$this->userInfo,TRUE);
+		$data['sidebar_admin'] = $this->load->view('templates/admin/inc/sidebar',$this->userInfo,TRUE);
 		$data['title'] = $this->title;
 		// $data['user'] = $this->userInfo['first_name'];		
 		$this->load_view_admin('templates/admin/dashboard',$data);
@@ -75,8 +75,8 @@ class Dashboard extends MAIN_Controller {
 
 		$data = array();
 
-		$data['navbar'] = $this->load->view('users/inc/navbar',$this->userInfo,TRUE);
-		$data['sidebar'] = $this->load->view('users/inc/sidebar',$this->userInfo,TRUE);
+		$data['navbar'] = $this->load->view('templates/users/inc/navbar',$this->userInfo,TRUE);
+		$data['sidebar'] = $this->load->view('templates/users/inc/sidebar',$this->userInfo,TRUE);
 		$data['title'] = $this->title;
 		
 		$this->load_view_user('templates/user/dashboard',$data);

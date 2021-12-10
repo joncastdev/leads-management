@@ -57,3 +57,5 @@ $route['translate_uri_dashes'] = FALSE;
 $route['login']['get'] = 'security/index';
 
 $route['login']['post'] = 'security/signin';
+
+$route['logout']['get'] = 'security/signout';

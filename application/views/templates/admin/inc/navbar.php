@@ -194,10 +194,10 @@
           <i class="fas fa-fw fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>          
           Perfil
         </a>  -->       
-        <a class="dropdown-item" href="<?php echo base_url();?>login/signout">
+        <a class="dropdown-item" href="<?php echo base_url();?>logout">
           <i class="fas fa-lock fa-sm fa-fw mr-2 text-gray-400"></i>
           <!-- <?php //echo lang('registrarse'); ?> -->
-          Cerrar session
+          Close session
         </a>          
 
       </div>     
