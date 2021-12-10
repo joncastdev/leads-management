@@ -122,6 +122,7 @@
         <div class="copyright text-center my-auto">
           <span>Copyright &copy; <a href="https://opengiscrm.com/" target="_blank">jonathancastro@opengiscrm.com</a></span>
         </div>
+        </div>
       </div>
     </footer>
     <!-- End of Footer -->

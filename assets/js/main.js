@@ -11,63 +11,6 @@ $( document ).ready(function() {
 
 // var table = $('#leads').DataTable();
 
-//formulario ajax
-$("#logForm").submit(function(event) {
-  event.preventDefault();
-
-  var email = $("#email").val();
-  var password = $("#password").val();
-
-
-  $.post(BASE_URL + 'login/signin',
-  {    
-    email: email,
-    password: password   
-  }, function(data) {
-    /*optional stuff to do after success */
-
-    // data viene como string
-    // console.log(data);
-
-      // convierto la data en objeto
-      var par = JSON.parse(data);
-
-      console.log(par);
-
-      $("#msg_email").html(par.msg_email);
-      $("#msg_password").html(par.msg_password);
-
-      $("#mensaje").html(par.msg_pass_check);
-
-      // $("#msg_user").html(par.msg_user);
-
-      switch (par) {
-       case "admin":
-       window.location=BASE_URL + 'dashboard';
-       break;
-       case "user":
-       window.location=BASE_URL + 'dashboard';
-       break;      
-     }
-
-    // if (par == "admin") {     
-    //   window.location=BASE_URL + 'dashboard';
-    // }
-
-    // if (par == "user") {     
-    //   window.location=BASE_URL + 'dashboard';
-    // }     
-
-  });
-
-
-
-
-
-});
-
-
-
 
 // // cargo los countrys con ajax
 $.ajax({
