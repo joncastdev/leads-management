@@ -59,7 +59,7 @@ _User: contacto@opengiscrm.com_
 ## Courses :movie_camera: 
 
 * [Youtube](https://www.youtube.com/channel/UC_HlKvgUp9OLAt45PnLe8Yw)
-* [Udemy](https://www.udemy.com/user/jonathan-castro-33/)    
+* [Udemy](https://www.udemy.com/course/codeigniter-3-de-0-al-limite/?referralCode=52B0A6D35126B4F41244)    
 
 ## Author ✒️
 
