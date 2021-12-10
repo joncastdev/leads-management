@@ -8,7 +8,7 @@ class Leads_Model extends CI_Model {
 	{		
 
 		// $this->db->select( 'A.id_lead,A.first_name,A.last_name,A.company,A.email,A.img,A.street,A.state,A.city,A.country,A.postal_code,A.title,A.phone,A.cell_phone,A.source,A.sector,A.income,A.fax,A.website,A.state_client,A.quantity_worker,A.qualification,A.id_skype,A.id_twiiter,A.description' );
-		$this->db->select( 'A.id_lead,A.first_name,A.last_name,A.company,A.email,A.img,B.state,A.street,B.state,A.city,C.country,A.postal_code,A.title,A.phone,A.cell_phone,D.source,E.sector,A.income,A.fax,A.website,F.state_client,A.quantity_worker,H.id_qualification,A.id_skype,A.id_twitter,A.description' );
+		$this->db->select( 'A.id_lead,A.first_name,A.last_name,A.company,A.email,A.img,B.state,A.street,B.state,A.city,C.country,A.postal_code,A.title,A.phone,A.cell_phone,D.source,E.sectors,A.income,A.fax,A.website,F.state_client,A.quantity_worker,H.id_qualification,A.id_skype,A.id_twitter,A.description' );
 		$this->db->from( 'leads AS A' );
 		$this->db->join( 'states AS B', 'A.id_state = B.id_state', 'inner' );
 		$this->db->join( 'countrys AS C', 'A.id_country = C.id_country', 'inner' );
