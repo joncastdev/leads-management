@@ -244,7 +244,7 @@ class Migration_create_data extends CI_Migration {
             'id_lead' => 1,           
             'first_name' => 'jonathan',
             'last_name' => 'castro',
-            'company' => 'OoenGisCRM',
+            'company' => 'OpenGisCRM',
             'email' => 'jonathancastro@opengiscrm.com',
             'img' => 'user.png',
             'id_state' => 1,
