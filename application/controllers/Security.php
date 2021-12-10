@@ -9,7 +9,7 @@ class Security extends OGC_Controller {
 	{		
 		parent::__construct();
 
-		 $this->load->model('Security_Model');			
+		$this->load->model('Security_Model');			
 
 	}
 
@@ -36,14 +36,7 @@ class Security extends OGC_Controller {
 
 		if ($this->form_validation->run() == FALSE){			
 
-			
-
-			$data=array(		
-				'msg_email' => form_error('email'),
-				'msg_password' => form_error('password')						
-			);
-
-			echo json_encode($data);		
+			$this->index();	
 
 
 		}else{		
@@ -102,15 +95,18 @@ class Security extends OGC_Controller {
 				// 	'msg_pass_check' => $this->session->flashdata('passwordCheck')					
 				// );
 
-				$msg_user_check = "User or password incorrect";	
-				$data=array(		
-					'msg_pass_check' => $msg_user_check					
-				);
+				// $msg_user_check = "User or password incorrect";	
+				// $data=array(		
+				// 	'msg_pass_check' => $msg_user_check					
+				// );
 
 
-				echo json_encode($data);
-				
-				// redirect(base_url());
+				// echo json_encode($data);
+				$this->session->flashdata('passwordCheck','Username or password incorrect');
+
+				redirect(base_url());
+
+				// redirect(base_url("login"));
 
 			}
 

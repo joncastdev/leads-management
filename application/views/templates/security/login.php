@@ -12,6 +12,17 @@
       <?php endif; ?>
 
     </h4>
+
+    <h4 class="bg-danger">
+        ok
+
+        <?php if($this->session->flashdata('passwordCheck')): ?>
+
+          <?php echo $this->session->flashdata('passwordCheck'); ?>
+
+        <?php endif; ?>
+
+      </h4>
     
     
   </div>
@@ -58,21 +69,30 @@
       <!--  <h4 class="modal-title">Agregar usuario</h4>
        <br> -->
        <h4 class="modal-title">Log In</h4>
-       <h4 class="text-danger" id="mensaje"></h4>
-     </div>
-     <div class="modal-body">
+       <h4 class="bg-danger">
+        ok
+
+        <?php if($this->session->flashdata('passwordCheck')): ?>
+
+          <?php echo $this->session->flashdata('passwordCheck'); ?>
+
+        <?php endif; ?>
+
+      </h4>
+    </div>
+    <div class="modal-body">
 
       <?php echo form_open('security/signin') ?>      
 
-       <div class="form-group">
+      <div class="form-group">
         <input type="email" class="form-control form-control-user" name="email" id="email"  placeholder="Email" value="admin@hotmail.com">
-        <!-- <div class="text-danger"><?php //echo form_error('email');  ?></div> -->
+        <div class="text-danger"><?php echo form_error('email');  ?></div>
         <div class="text-danger" id="msg_email"></div>
       </div>
 
       <div class="form-group">
         <input type="password" class="form-control form-control-user" name="password" id="password"  placeholder="Password" value="admin">
-        <!-- <div class="text-danger"><?php //echo form_error('email');  ?></div> -->
+        <div class="text-danger"><?php echo form_error('password');  ?></div>
         <div class="text-danger" id="msg_password"></div>
       </div>      
 
