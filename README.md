@@ -22,6 +22,12 @@ _Server apache, php 5.6 >=, mysql_
 
 The following steps are meant to be used on a development server.
 
+- Composer optional
+
+```bash
+$ composer create-project jonathancastrodev/opengiscrmcodeigniter3
+``` 
+
 - Clone Project
 
 ```bash
@@ -39,13 +45,6 @@ $ sudo chmod -R 777 opengiscrm-codeigniter3
 ```bash
 $ cd /var/www/opengiscrm-codeigniter3
 ```
-
-- Setup vendor libraries 
-
-```bash
-$ composer install
-```
-
 - Run migrations
 
 ```bash
