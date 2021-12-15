@@ -7,7 +7,12 @@ _These instructions will allow you to get a copy of the project running on your 
 
 ## Demo Web-App :movie_camera: 
 
-* [Demo CodeIgniter 3](https://www.youtube.com/watch?v=1h9KwDHc4Ps&ab_channel=OpenGisCRM)
+* [Demo CodeIgniter 3](https://www.youtube.com/watch?v=HuGF-vAOZfg&ab_channel=OpenGisCRM)
+
+## Explanation of the code :movie_camera: 
+
+* [Free Course CodeIgniter 3](https://www.udemy.com/course/codeigniter-4-desarrollando-aplicaciones-desde-0/)
+
 
 ### Pre-requirements 📋
 
@@ -58,7 +63,7 @@ _User: contacto@opengiscrm.com_
 
 ## Courses :movie_camera: 
 
-* [Youtube](https://www.youtube.com/channel/UC_HlKvgUp9OLAt45PnLe8Yw)
+* [Youtube](https://www.youtube.com/channel/UCG9mPlAyN6DzVM_AQW0odhQ)
 * [Udemy](https://www.udemy.com/course/codeigniter-3-de-0-al-limite/?referralCode=52B0A6D35126B4F41244)    
 
 ## Author ✒️
