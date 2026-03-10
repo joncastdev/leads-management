@@ -8,12 +8,18 @@
             "Jonathancastrodev\\OpengiscrmCodeigniter3\\": "src/"
         }
     },
-    "authors": [
+   "authors": [
         {
             "name": "Jonathan Castro",
-            "email": "jonathancastro@opengiscrm.com"
+            "email": "sistemaspymesjc@gmail.com"
         }
     ],
+    "support": {
+        "issues": "https://github.com/jonathancastroccs/Opengiscrm-CodeIgniter3/issues",
+        "forum": "https://discord.gg/ntpz4aRHHy",
+        "wiki": "https://github.com/jonathancastroccs/Opengiscrm-CodeIgniter3/wiki",
+        "source": "https://github.com/jonathancastroccs/Opengiscrm-CodeIgniter3"
+    },
     "require": {
         "php": ">=5.3.7"
     }
