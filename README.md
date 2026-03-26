@@ -1,78 +1,186 @@
-# OpenGisCRM CodeIgniter 3 Version
-Manage your clients and leads with an Open Source Gis CRM Software.
+<h1 align="center">
+  <br>
+  <a href="https://sistemaspymesjc.blogspot.com/p/trabaja-con-nosotros.html">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj80lJ2YL2GVpJi0J9bSBGXtwbjx-JXLjA63ZLH5lRzxjuwxYHhXzsKpTU8rjLiAQPq07prlMOiW7c8XKh3Klv91Hf_CM9e8wpuHg7EiqZYNW6utWYKogRHdFTtUnsd4_CAKpMauAPWYMY5kzb18RZgrKzEUs4jgd7g4gJ807oqt5mGhaM2aSxw07wYV3w/s320/foroworkers_logo.png" alt="Foroworkers" width="150">
+  </a>
+  <br>
+  Foroworkers
+  <br>
+</h1>
 
-## Starting 🚀
+<br>
+
+<h4 align="center">
+  A powerful Open Source Business Forum that can be installed on your server. 
+</h4>
+
+<p align="center">
+  <img alt="GitHub" src="https://img.shields.io/github/license/foroworkers/foroworkers?style=for-the-badge">
+  <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/foroworkers/foroworkers?style=for-the-badge">
+  <img alt="GitHub All Releases" src="https://img.shields.io/github/downloads/foroworkers/Foroworkers/total?style=for-the-badge">
+  <a href="https://discord.gg/ntpz4aRHHy">
+    <img alt="Chat On Discord" src="https://img.shields.io/badge/chat-on%20discord-7289da?style=for-the-badge&logo=discord&logoColor=white">
+  </a>
+</p>
+
+<p align="center">
+  <a href="#about">About</a> •
+  <a href="#features">Features</a> •
+  <a href="#setup">Setup</a> •
+  <a href="#installation">Installation</a> •
+  <a href="#access"> Access</a> •
+   <a href="#support"> Support</a> •
+  <a href="#donations"> Donations</a> •
+</p>
+
+![screenshot](screenshot.png)
+
+## About
+A powerful Open Source Business Forum that can be installed on your server.Open source Laravel Forum
+
+## Starting
 
 _These instructions will allow you to get a copy of the project running on your local machine for development and testing purposes._
 
-## Demo Web-App :movie_camera: 
+## Demo  
 
-* [Demo CodeIgniter 3](https://www.youtube.com/watch?v=HuGF-vAOZfg&ab_channel=OpenGisCRM)
-
-## Explanation of the code :movie_camera: 
-
-* [Free Course CodeIgniter 3](https://www.udemy.com/course/codeigniter-4-desarrollando-aplicaciones-desde-0/)
+* [Install Project ](https://www.youtube.com/watch?v=U1zIbFJqXHU)
 
 
-### Pre-requirements 📋
+## Setup
 
-_Server apache, php 5.6 >=, mysql_
+- PHP 8.3 >=
+- PostgreSQL (Or MySQL)
+- [Composer](https://getcomposer.org/)
 
-# Installation
+## Additional details on dependencies
+
+Assuming you're running Ubuntu, and then install all dependencies from the following list:
+
+sudo apt-get install php8.3 php8.3-pgsql php8.3-mysql php8.3-intl php8.3-json php8.3-mbstring
+
+## Installation
 
 The following steps are meant to be used on a development server.
-
-- Composer optional
-
-```bash
-$ composer create-project jonathancastrodev/opengiscrmcodeigniter3
-``` 
 
 - Clone Project
 
 ```bash
-$ git clone https://github.com/jonathancastrodev/opengiscrm-codeigniter3.git
+$ git clone https://github.com/foroworkers/foroworkers.git
 ``` 
 
-- Set permissions
+- Pull Project Dev Branch
 
 ```bash
-$ sudo chmod -R 777 opengiscrm-codeigniter3
+$ git pull origin dev
+``` 
+- Navigate to the root of the Laravel project
+
+```bash
+$ cd foroworkers
+``` 
+- Setup vendor libraries 
+
+```bash
+$ composer install
 ```
 
-- Move to folder
+- Setup .env file and create database
+- Avoid changing the author data as this may cause problems when running the project.
+
+- Copy .env.example config and generate Key project 
 
 ```bash
-$ cd /var/www/opengiscrm-codeigniter3
+$ cp .env.example .env
+``` 
+```bash
+$ php artisan key:generate
+``` 
+
+```bash
+First Step Create New Database Example: foroworkers
+
+APP_LOCALE=en
+PAYPAL_EMAIL=yourpaypalemail
+APP_ENDPOINT=https://sistemaspymesjc.blogspot.com/p/trabaja-con-nosotros.html
+APP_ENDPOINT_LOCAL=
+APP_AUTHOR=jonathancastro
+APP_EMAIL=sistemaspymesjc@gmail.com
+APP_COPYRIGHT=sistemaspymesjc
+APP_DONATE=https://www.paypal.com/paypalme/programadorjonathan
+APP_PHONE=5804241666224
+
+database connection
+
+DB_DATABASE=foroworkers
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+
+for sending emails
+
+MAIL_MAILER=
+MAIL_HOST=
+MAIL_PORT=
+MAIL_USERNAME=
+MAIL_PASSWORD=
+MAIL_ENCRYPTION=
+MAIL_FROM_ADDRESS=
+MAIL_FROM_NAME=
 ```
-- Run migrations
 
 ```bash
-$ php index.php migrate 
-```    
-## Access Web-App:
+$ php artisan migrate:fresh --seed
+```
+```bash
+$ php artisan storage:link
+```
+```bash
+$ php artisan optimize:clear
+```
+- Run server
 
-_Admin: jonathancastro@opengiscrm.com_
+```bash
+$ php artisan serve
+```
 
-_User: contacto@opengiscrm.com_
+
+## Access:
+
+_Admin: admin@gmail.com
+_Pass: Test1234
+
+_User: user@gmail.com
+_Pass: Test1234
 
 ## Technologies 🛠️
 
-* [CodeIgniter v3.1.11](https://codeigniter.com/userguide3/index.html) 
+* [Laravel 12](https://laravel.com/docs/12.x)
+* [Email Tool](https://mailtrap.io?ref=jonathan61)  
+* [Hosting Tool](https://namecheap.pxf.io/rnOVB5) 
+
 
 ## Courses :movie_camera: 
 
-* [Youtube](https://www.youtube.com/channel/UCG9mPlAyN6DzVM_AQW0odhQ)
-* [Udemy](https://www.udemy.com/course/codeigniter-3-de-0-al-limite/?referralCode=52B0A6D35126B4F41244)    
+* [Udemy](https://www.udemy.com/user/jonathan-castro-33/)    
 
 ## Author ✒️
 
-* **Jonathan Castro** - *Web Developer* - [jonathancastrodev](https://github.com/jonathancastrodev)
+* **Jonathan Castro** - *Web Developer* - [jonathancastrodeveloper](https://github.com/jonathancastroccs)
 
-## Contact :mailbox:
 
-_jonathancastro@opengiscrm.com_
+## Support
 
-## Donations 🎁
+_sistemaspymesjc@gmail.com_
 
-* [Paypal](https://paypal.me/joncastroweb?locale.x=es_XC) - Thank you very much for your contribution.
+* If you would like a business forum with many extra features, please contact us with your requirements and budget. Thank you.
+
+## Donations
+
+* [Paypal](https://www.paypal.com/paypalme/programadorjonathan) - Thank you very much for your contribution.
+
+* [Ko-Fi](https://ko-fi.com/foroworkers) - Thank you very much for your contribution.
+
+* [Patreon](https://www.patreon.com/c/foroworkers) - Thank you very much for your contribution.
+
+
+
