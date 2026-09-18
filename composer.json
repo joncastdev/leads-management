@@ -1,26 +1,21 @@
 {
-    "name": "jonathancastrodev/opengiscrm-codeigniter3",
-    "description": "OpenSource Gis CRM Software",
-    "type": "project",
-    "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "Jonathancastrodev\\OpengiscrmCodeigniter3\\": "src/"
-        }
-    },
-   "authors": [
-        {
-            "name": "Jonathan Castro",
-            "email": "sistemaspymesjc@gmail.com"
-        }
-    ],
-    "support": {
-        "issues": "https://github.com/jonathancastroccs/Opengiscrm-CodeIgniter3/issues",
-        "forum": "https://discord.gg/ntpz4aRHHy",
-        "wiki": "https://github.com/jonathancastroccs/Opengiscrm-CodeIgniter3/wiki",
-        "source": "https://github.com/jonathancastroccs/Opengiscrm-CodeIgniter3"
-    },
-    "require": {
-        "php": ">=5.3.7"
-    }
+	"name": "joncastdev/lead-management",
+	"type": "project",
+	"description": "Open source lead management.",
+	"keywords": ["lead management ", "appointment"],
+	"license": "MIT",
+	"autoload": {
+		"psr-4": {
+			"Joncastdev\\LeadManagement\\": "src/"
+		}
+	},
+	"authors": [
+		{
+			"name": "Jonathan Castro",
+			"email": "joncastdev@gmail.com"
+		}
+	],	
+	"require": {
+		"php": ">=5.3.7"
+	}
 }
